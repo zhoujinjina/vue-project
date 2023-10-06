@@ -7,19 +7,14 @@
     <script src="./vue.js"></script>
   </head>
   <body>
-    <div class="root">{{msg}}
-        <a v-bind:href="address">去百度</a>
-        <a :href="address">去百度</a>
-    </div>
+    <div class="root">{{msg}}</div>
    
   </body>
   <script type="text/javascript">
-    
     const vue = new Vue({
       el: ".root",
       data: {
         msg: "hello world",
-        address:"http://www.baidu.com"
       },
     });
   </script>
