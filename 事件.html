@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+
+   <div class="root">
+    <button @click="showInfo">2</button>
+    <button @click="showInfo2($event,333)">2</button>
+   </div>
+  </body>
+  <script type="text/javascript">
+   new Vue({
+    data:{
+
+    },
+    methods:{
+      showInfo:function(e){
+        console.log(e)
+        alert('info');
+      },
+      showInfo2:function(e,number){
+        console.log(e)
+        console.log(number)
+
+      }
+    }
+   }).$mount(".root")
+  </script>
+</html>
