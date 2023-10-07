@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body></body>
+  <script type="text/javascript">
+    const person = { x: 100 };
+    const xiaoming = { y: 200 };
+    Object.defineProperty(xiaoming, "x", {
+      get() {
+        return person.x;
+      },
+      set(value) {
+        person.x = value;
+      },
+    });
+  </script>
+</html>

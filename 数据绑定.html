@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div class="root">{{msg}}
+        <a v-bind:href="address">去百度</a>
+        <a :href="address">去百度</a>
+        单向数据绑定：<input type="text" :value="number">
+        双向数据绑定：<input type="text" v-model:value="number">
+        双向数据绑定：<input type="text" v-model="number">
+        <!-- v-model默认就是value值 可以省略冒号和value -->
+        <!-- v-model只能用在表单类元素中 -->
+    </div>
+   
+  </body>
+  <script type="text/javascript">   
+    
+    const vue = new Vue({
+      el: ".root",
+      data: {
+        msg: "hello world",
+        address:"http://www.baidu.com",
+        number:122312
+      },
+    });
+  </script>
+</html>
