@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+
+   <div class="root">
+   <a href="http://wwww.baidu.com" @click.prevent="showInfo">点我</a>
+   <div @click.stop="showInfo">点我</div>
+   <div @click.once="showInfo">点我3</div>
+   <!-- .capture是事件捕获触发 .self是e.target是当前元素才触发 .passive 默认事件直接执行 无需等待事件回调执行完毕  -->
+   </div>
+  </body>
+  <script type="text/javascript">
+   new Vue({
+    data:{
+
+    },
+    methods:{
+      showInfo:function(e){
+        console.log(e)
+        alert('info');
+      },
+      showInfo2:function(e,number){
+        console.log(e)
+        console.log(number)
+
+      }
+    }
+   }).$mount(".root")
+  </script>
+</html>
