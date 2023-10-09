@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div class="root">
+      <div>今天天气真{{tq}}</div>
+      <button @click="change">点我换天气</button>
+      <button @click="numbers.a++">改number</button>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: ".root",
+        data: {
+          weather: "炎热",
+          numbers:{
+            a:1,
+            b:1
+          }
+        },
+        computed: {
+          tq: function () {
+            return this.weather == "炎热" ? "寒冷" : "炎热";
+          },
+        },
+        methods: {
+          change: function () {
+            this.weather = this.weather == "炎热" ? "寒冷" : "炎热";
+          },
+          
+        },
+        watch: {
+            weather: {
+              immediate:true,
+              // handler初始化执行
+              handler(newValue, old) {
+                console.log(newValue, old);
+                console.log("天气变了");
+              },
+            },
+            // 'numbers.a':{
+            //   immediate:true,
+            //   handler(newValue, old) {
+            //     console.log("a变了")
+            //   }
+            // },
+            // numbers:{
+            //   deep:true,
+            //   handler(){
+            //     console.log("深度监视")
+            //   }
+            // }
+            'numbers.a'(newValue,pre){
+                console.log("深度监视")
+            }
+          },
+          
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+
+   <div class="root">
+   <input type="text" v-model="xin">
+   <input type="text" v-model="ming">
+   <input type="text" readonly v-model="name">
+   <button @click="cp">计算</button>
+   <h2>{{showInfo()}}2</h2><br>
+   <h1>{{name}}2</h1><br>
+   <h1>{{fullName}}computed</h1>
+  <script type="text/javascript">
+    Vue.config.productionTip=false 
+    new Vue({
+      el:'.root',
+     data:{
+      xin:"",
+      ming:"",
+      name:""
+     },
+     computed:{
+       fullName:{
+         get(){
+           return this.xin+this.ming
+         },
+        //  set(){
+           
+        //  }
+       }
+     },
+     methods:{
+       showInfo:function(e){
+        return this.xin+this.ming
+       },
+       cp:function(){
+        this.name=this.xin+this.ming
+       }
+     }
+    })
+   </script>  
+  </body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <style>
+    .black{
+      background-color: black;
+    
+    }
+    .red{
+      border: 1px solid red;
+
+    }
+  </style>
+  <body>
+
+   <div class="root">
+   <div :class="color">1</div>
+   <div :class="color2">2</div>
+   <h1 class="">3</h1>
+   </div>
+  <script type="text/javascript">
+    Vue.config.productionTip=false 
+    new Vue({
+      el:'.root',
+    data:{
+      color:"black",
+      color2:{
+        // 直接使用类名
+        black:true,
+        red:true
+      }
+    }
+    })
+   </script>  
+  </body>
+
+</html>
