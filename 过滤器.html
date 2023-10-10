@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+
+   <div class="root">
+    <a href="">{{a|nu}}</a>
+   </div>
+  <script type="text/javascript">
+    Vue.config.productionTip=false 
+    new Vue({
+      el:'.root',
+     data:{
+     a:1000
+     },
+     computed:{
+       fullName:{
+         get(){
+           return this.xin+this.ming
+         },
+        //  set(){
+           
+        //  }
+       }
+     },
+     methods:{
+       showInfo:function(e){
+        return this.xin+this.ming
+       },
+       cp:function(){
+        this.name=this.xin+this.ming
+       }
+     },
+     filters:{
+      nu:function(value){
+        return value-2
+      }
+     }
+    })
+   </script>  
+  </body>
+
+</html>
