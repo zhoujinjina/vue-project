@@ -9,16 +9,16 @@
   <body>
 
    <div class="root">
-    <a href="">{{a|nu}}</a>
-    <h2 v-html="text"></h2>
+    <button @click="a++">点我</button>
+ <input type="text" v-daoguan:value="a">
+ <div>{{a}}</div>
    </div>
   <script type="text/javascript">
     Vue.config.productionTip=false 
     new Vue({
       el:'.root',
      data:{
-     a:1000,
-     text:"<h2>hello</h2>"
+     a:1000
      },
      computed:{
        fullName:{
@@ -38,9 +38,11 @@
         this.name=this.xin+this.ming
        }
      },
-     filters:{
-      nu:function(value){
-        return value-2
+     directives:{
+      daoguan(a,b){
+        console.log("DaoGuan")
+        console.log(a,b)
+        a.value=b.value
       }
      }
     })
